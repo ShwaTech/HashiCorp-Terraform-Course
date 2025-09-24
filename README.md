@@ -4,15 +4,15 @@ Let's Master Terraform which is an open-source Infrastructure as Code (IaC) tool
 
 ## Course Outline
 
-✅ Introduction to Infrastructure as Code (IaC)
-✅ Terraform core concepts & real-world use cases
-✅ Terraform Components & Configuration Files
-✅ Terraform Providers & Authentication
-✅ Terraform Workflow: init, plan, apply, destroy
-✅ Working with Resources & Resource Dependencies
-✅ Output Blocks & Terraform State
-✅ Data Sources, Variables, and Modules
-✅ Best practices and tips for writing clean Terraform code
+- ✅ Introduction to Infrastructure as Code (IaC).
+- ✅ Terraform core concepts & real-world use cases.
+- ✅ Terraform Components & Configuration Files.
+- ✅ Terraform Providers & Authentication.
+- ✅ Terraform Workflow: init, plan, apply, destroy.
+- ✅ Working with Resources & Resource Dependencies.
+- ✅ Output Blocks & Terraform State.
+- ✅ Data Sources, Variables, and Modules.
+- ✅ Best practices and tips for writing clean Terraform code.
 
 ## ⚙️ Prerequisites
 
