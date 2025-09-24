@@ -1,0 +1,48 @@
+
+# # Configure the AWS Provider with static credentials
+# # This Method is not recommended for production use due to security reasons.
+# # Instead, consider using environment variables, shared credentials file, or IAM roles.
+# provider "aws" {
+#   region     = "us-west-2"
+#   access_key = "my-access-key"
+#   secret_key = "my-secret-key"
+# }
+
+
+# # Configure the AWS Provider for a specific profile
+# provider "aws" {
+#   region = "us-east-1"
+#   profile = "shwa-aws"
+# }
+
+
+# # Configure the AWS Provider using environment variables
+# # Make sure to set the environment variables before running Terraform
+# provider "aws" {}
+# $ export AWS_ACCESS_KEY_ID="anaccesskey"
+# $ export AWS_SECRET_ACCESS_KEY="asecretkey"
+# $ export AWS_REGION="us-west-2"
+# $ terraform plan
+
+
+# # Configure the AWS Provider using shared credentials file and config file
+# # Make sure to set up the ~/.aws/credentials and ~/.aws/config files properly
+# provider "aws" {
+#   shared_config_files      = ["~/.aws/config"]
+#   shared_credentials_files = ["~/.aws/credentials"]
+#   profile                  = "customprofile"
+# }
+
+
+# Configure the AWS Provider
+provider "aws" {
+  region = "us-east-1"
+}
+
+
+# Create a VPC
+resource "aws_vpc" "vpc_tf" {
+  cidr_block = "10.0.0.0/16"
+}
+
+
