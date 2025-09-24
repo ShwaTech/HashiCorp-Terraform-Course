@@ -56,3 +56,35 @@ resource "aws_instance" "tf_ec2" {
   }
 }
 
+## ===================
+## Terraform Resources
+## =================== 
+
+# Create another VPC with tags
+resource "aws_vpc" "shwa_VPC" {
+  cidr_block = "10.0.0.0/16"
+
+  tags = {
+    Name = "SHWA_VPC"
+  }
+}
+
+# Create a Subnet in the VPC
+resource "aws_subnet" "main" {
+  vpc_id     = aws_vpc.shwa_VPC.id
+  cidr_block = "10.0.1.0/24"
+
+  tags = {
+    Name = "SHWA_Subnet"
+  }
+}
+
+resource "aws_s3_bucket" "shwa_bucket" {
+  bucket = "shwa-terraform-storage-bucket" # Bucket names must be globally unique
+
+  tags = {
+    Name        = "SHWA_Bucket"
+    Environment = "Dev"
+  }
+}
+
