@@ -38,3 +38,18 @@ output "SHWA_PWD" {
   sensitive = true
 }
 
+
+# =======================
+# Terraform Random String
+# =======================
+
+resource "random_string" "shwa_string" {
+  length  = 16
+  special = true
+}
+
+output "SHWA_STRING" {
+  value = random_string.shwa_string.result
+  # sensitive = true
+}
+
