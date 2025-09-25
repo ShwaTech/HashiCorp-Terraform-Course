@@ -114,3 +114,21 @@ output "ec2_public" {
 }
 
 
+# ================
+# Terraform Blocks
+# ================
+
+terraform {
+  required_version = "=1.13.3"
+  required_providers {
+    shwa-cloud = {
+      source  = "hashicorp/aws"
+      version = "=6.14.1"
+    }
+  }
+}
+
+provider "shwa-cloud" {
+  region = "us-east-1"
+}
+
