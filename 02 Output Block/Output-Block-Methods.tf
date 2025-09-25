@@ -24,4 +24,17 @@ output "vpc_cidr" {
 }
 
 
+# =========================
+# Terraform Random Password
+# =========================
+
+resource "random_password" "shwa_password" {
+  length = 16
+  special = true
+}
+
+output "SHWA_PWD" {
+  value     = random_password.shwa_password.result
+  sensitive = true
+}
 
