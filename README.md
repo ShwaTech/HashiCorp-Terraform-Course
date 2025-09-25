@@ -49,14 +49,15 @@ Default output format [None]: json
 
 ## 🚀 Terraform Commands
 
-| Command                      | Description                     |
-|------------------------------|---------------------------------|
-| `terraform init`             | Initialize Terraform project    |
-| `terraform validate`         | Validate `.tf` files            |
-| `terraform plan`             | Show execution plan             |
-| `terraform apply`            | Create/modify infrastructure    |
-| `terraform destroy`          | Destroy managed infrastructure  |
-| `terraform fmt`              | Format Terraform code           |
-| `terraform providers`        | List providers used             |
-| `terraform state list`       | View tracked resources          |
-| `terraform workspace new dev`| Create a new workspace          |
+| Command                      | Description                      |
+|------------------------------|----------------------------------|
+| `terraform init`             | Initialize Terraform project     |
+| `terraform validate`         | Validate `.tf` files             |
+| `terraform plan`             | Show execution plan              |
+| `terraform apply`            | Create/modify infrastructure     |
+| `terraform destroy`          | Destroy managed infrastructure   |
+| `terraform show`             | Displays current Terraform state |
+| `terraform fmt`              | Format Terraform code            |
+| `terraform providers`        | List providers used              |
+| `terraform state list`       | View tracked resources           |
+| `terraform workspace new dev`| Create a new workspace           |

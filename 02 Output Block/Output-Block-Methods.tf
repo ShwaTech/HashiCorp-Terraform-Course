@@ -132,3 +132,71 @@ provider "shwa-cloud" {
   region = "us-east-1"
 }
 
+
+# ======================
+# Terraform Data Sources
+# ======================
+
+data "aws_region" "current" {}
+
+output "current_region" {
+  value = data.aws_region.current.id
+}
+
+data "aws_regions" "currents" {}
+
+output "current_regions" {
+  value = data.aws_regions.currents.names
+}
+
+data "aws_availability_zones" "available" {}
+
+output "available_zones" {
+  value = data.aws_availability_zones.available.names[*]
+}
+
+# Useful to get the latest AMI ID for EC2 instance creation
+data "aws_ami" "shwa_ami" {
+  most_recent = true
+  owners      = ["amazon"]
+
+  filter {
+    name   = "name"
+    values = ["amzn2-ami-hvm-*-x86_64-gp2"]
+  }
+
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
+  }
+
+  filter {
+    name   = "root-device-type"
+    values = ["ebs"]
+  }
+  
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
+  }
+}
+
+output "latest_ami_id" {
+  value = data.aws_ami.shwa_ami.id
+}
+
+output "latest_ami_name" {
+  value = data.aws_ami.shwa_ami.name
+}
+
+
+resource "aws_instance" "shwa_instance" {
+  ami           = data.aws_ami.shwa_ami.id
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "SHWADepOps_Instance"
+  }
+  
+}
+
